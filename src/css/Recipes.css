@@ -1,0 +1,133 @@
+.recipes-container {
+  padding: 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #f8fdfb;
+  min-height: 100vh;
+}
+
+.recipes-container h2 {
+  color: #007b5e;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.recipes-subtitle {
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.recipe-card {
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 128, 96, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 128, 96, 0.25);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  margin: 12px 0;
+  color: #007b5e;
+  font-size: 1.1rem;
+}
+
+.recipe-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-height: 600px; 
+  max-width: 550px;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 128, 96, 0.3);
+}
+
+.popup-image {
+  width: 60%;
+  height: auto; /* maintains aspect ratio */
+  max-height: 300px; /* 👈 limit image height */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.popup-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.popup-tabs button {
+  background: none;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.popup-tabs button.active {
+  color: white;
+  background-color: #007b5e;
+  border-radius: 8px;
+}
+
+.popup-body {
+  margin-top: 10px;
+  color: #333;
+}
+
+.popup-body ol,
+.popup-body ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

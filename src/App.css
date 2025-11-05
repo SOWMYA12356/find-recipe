@@ -1,0 +1,230 @@
+/* 🧩 Fix unwanted right-side space */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Optional: make header and main content align perfectly */
+header, main, footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 🌿 General body settings */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* 🌞 Light and 🌙 Dark mode variables */
+.app.light {
+  --bg: #f7f9f9;
+  --text: #1e1e1e;
+  --card: #ffffff;
+  --button-bg: #2e8b57;
+  --button-text: #ffffff;
+  --accent: #81c784;
+}
+
+.app.dark {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --card: #1e1e1e;
+  --button-bg: #388e3c;
+  --button-text: #ffffff;
+  --accent: #4caf50;
+}
+
+/* App background */
+.app {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* 🌿 Header & Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: var(--card);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Logo / App Title */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--button-bg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Navbar controls */
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Navbar links */
+.controls a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.controls a:hover {
+  background: var(--button-bg);
+  color: var(--button-text);
+}
+
+/* Navbar buttons (Dark Mode / Logout) */
+.controls button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* 🌱 Auth box and recipe box */
+.auth-box, .recipe-box {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Headings inside boxes */
+.auth-box h1, .recipe-box h1 {
+  margin-bottom: 20px;
+  color: var(--button-bg);
+  font-size: 1.6rem;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: var(--button-bg);
+}
+
+input::placeholder {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* Buttons inside forms */
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Links inside forms */
+.link {
+  color: var(--button-bg);
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* 🌾 Recipe results grid */
+.results {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Recipe card */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text);
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* 📱 Responsive adjustments */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 25px;
+  }
+
+  .controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .auth-box, .recipe-box {
+    margin: 60px 20px;
+    padding: 25px;
+  }
+}
